@@ -1,0 +1,87 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc
+Date     : 10/6/2022
+Time     : 12:12:26 AM
+
+Processing Rule : Clearance Constraint (Gap=8mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=10mil) (Max=10mil) (Preferred=10mil) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=1mil) (Max=100mil) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=10mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=10mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=10mil) (IsPad),(All)
+Rule Violations :0
+
+Processing Rule : Silk to Silk (Clearance=10mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mil) (All)
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)
+Rule Violations :0
+
+Waived Violations Of Rule : Clearance Constraint (Gap=8mil) (All),(All)
+   Waived Violation between Clearance Constraint: (5.904mil < 8mil) Between Pad C14-1(1280mil,2255mil) on Top Layer And Pad C14-2(1229.565mil,2255mil) on Top Layer Waived by Ryan Reidhead at 10/6/2022 12:12:11 AM
+   Waived Violation between Clearance Constraint: (6.083mil < 8mil) Between Pad C4-1(2159.976mil,1265mil) on Top Layer And Pad C4-2(2180mil,1265mil) on Top Layer Waived by Ryan Reidhead at 10/6/2022 12:12:11 AM
+   Waived Violation between Clearance Constraint: (7.874mil < 8mil) Between Pad U1-1(2199.37mil,915.709mil) on Top Layer And Pad U1-2(2179.685mil,915.709mil) on Top Layer Waived by Ryan Reidhead at 10/6/2022 12:12:11 AM
+   Waived Violation between Clearance Constraint: (7.874mil < 8mil) Between Pad U1-10(2199.37mil,754.291mil) on Top Layer And Pad U1-9(2179.685mil,754.291mil) on Top Layer Waived by Ryan Reidhead at 10/6/2022 12:12:11 AM
+   Waived Violation between Clearance Constraint: (7.874mil < 8mil) Between Pad U1-2(2179.685mil,915.709mil) on Top Layer And Pad U1-3(2160mil,915.709mil) on Top Layer Waived by Ryan Reidhead at 10/6/2022 12:12:11 AM
+   Waived Violation between Clearance Constraint: (7.874mil < 8mil) Between Pad U1-3(2160mil,915.709mil) on Top Layer And Pad U1-4(2140.315mil,915.709mil) on Top Layer Waived by Ryan Reidhead at 10/6/2022 12:12:11 AM
+   Waived Violation between Clearance Constraint: (7.874mil < 8mil) Between Pad U1-4(2140.315mil,915.709mil) on Top Layer And Pad U1-5(2120.63mil,915.709mil) on Top Layer Waived by Ryan Reidhead at 10/6/2022 12:12:11 AM
+   Waived Violation between Clearance Constraint: (7.874mil < 8mil) Between Pad U1-6(2120.63mil,754.291mil) on Top Layer And Pad U1-7(2140.315mil,754.291mil) on Top Layer Waived by Ryan Reidhead at 10/6/2022 12:12:11 AM
+   Waived Violation between Clearance Constraint: (7.874mil < 8mil) Between Pad U1-7(2140.315mil,754.291mil) on Top Layer And Pad U1-8(2160mil,754.291mil) on Top Layer Waived by Ryan Reidhead at 10/6/2022 12:12:11 AM
+   Waived Violation between Clearance Constraint: (7.874mil < 8mil) Between Pad U1-8(2160mil,754.291mil) on Top Layer And Pad U1-9(2179.685mil,754.291mil) on Top Layer Waived by Ryan Reidhead at 10/6/2022 12:12:11 AM
+Waived Violations :10
+
+Waived Violations Of Rule : Minimum Solder Mask Sliver (Gap=10mil) (All),(All)
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (0.662mil < 10mil) Between Pad C13-1(1545mil,2192.677mil) on Top Layer And Pad C13-2(1545mil,2227.323mil) on Top Layer [Top Solder] Mask Sliver [0.662mil]Waived by Ryan Reidhead at 10/6/2022 12:11:53 AM
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (5.904mil < 10mil) Between Pad C14-1(1280mil,2255mil) on Top Layer And Pad C14-2(1229.565mil,2255mil) on Top Layer [Top Solder] Mask Sliver [5.904mil]Waived by Ryan Reidhead at 10/6/2022 12:11:53 AM
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (6.083mil < 10mil) Between Pad C4-1(2159.976mil,1265mil) on Top Layer And Pad C4-2(2180mil,1265mil) on Top Layer [Top Solder] Mask Sliver [6.083mil]Waived by Ryan Reidhead at 10/6/2022 12:11:47 AM
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (5.779mil < 10mil) Between Pad R1-1(1830mil,2460.63mil) on Top Layer And Pad R1-2(1830mil,2500mil) on Top Layer [Top Solder] Mask Sliver [5.779mil]Waived by Ryan Reidhead at 10/6/2022 12:11:53 AM
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (9.843mil < 10mil) Between Pad U3-3(1304.882mil,2488.228mil) on Top Layer And Pad U3-4(1304.882mil,2468.543mil) on Top Layer [Top Solder] Mask Sliver [9.843mil]Waived by Ryan Reidhead at 10/6/2022 12:11:53 AM
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (9.843mil < 10mil) Between Pad U3-5(1320.63mil,2440mil) on Top Layer And Pad U3-6(1340.315mil,2440mil) on Top Layer [Top Solder] Mask Sliver [9.843mil]Waived by Ryan Reidhead at 10/6/2022 12:11:43 AM
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (9.843mil < 10mil) Between Pad U3-6(1340.315mil,2440mil) on Top Layer And Pad U3-7(1360mil,2440mil) on Top Layer [Top Solder] Mask Sliver [9.843mil]Waived by Ryan Reidhead at 10/6/2022 12:11:53 AM
+   Waived Violation between Minimum Solder Mask Sliver Constraint: (9.843mil < 10mil) Between Pad U3-8(1375.748mil,2468.543mil) on Top Layer And Pad U3-9(1375.748mil,2488.228mil) on Top Layer [Top Solder] Mask Sliver [9.843mil]Waived by Ryan Reidhead at 10/6/2022 12:11:53 AM
+Waived Violations :8
+
+Waived Violations Of Rule : Silk To Solder Mask (Clearance=10mil) (IsPad),(All)
+   Waived Violation between Silk To Solder Mask Clearance Constraint: (7.874mil < 10mil) Between Pad C12-1(1560mil,2800.354mil) on Top Layer And Track (1536.256mil,2750.28mil)(1536.256mil,2769.72mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.874mil]Waived by Ryan Reidhead at 10/6/2022 12:11:16 AM
+   Waived Violation between Silk To Solder Mask Clearance Constraint: (7.874mil < 10mil) Between Pad C12-1(1560mil,2800.354mil) on Top Layer And Track (1583.744mil,2750.28mil)(1583.744mil,2769.72mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.874mil]Waived by Ryan Reidhead at 10/6/2022 12:11:13 AM
+   Waived Violation between Silk To Solder Mask Clearance Constraint: (7.874mil < 10mil) Between Pad C12-2(1560mil,2719.646mil) on Top Layer And Track (1536.256mil,2750.28mil)(1536.256mil,2769.72mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.874mil]Waived by Ryan Reidhead at 10/6/2022 12:11:31 AM
+   Waived Violation between Silk To Solder Mask Clearance Constraint: (7.874mil < 10mil) Between Pad C12-2(1560mil,2719.646mil) on Top Layer And Track (1583.744mil,2750.28mil)(1583.744mil,2769.72mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.874mil]Waived by Ryan Reidhead at 10/6/2022 12:11:27 AM
+   Waived Violation between Silk To Solder Mask Clearance Constraint: (8.017mil < 10mil) Between Pad C6-1(1060mil,2469.772mil) on Top Layer And Track (1024.567mil,2504.312mil)(1024.567mil,2535.688mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.018mil]Waived by Ryan Reidhead at 10/6/2022 12:11:20 AM
+   Waived Violation between Silk To Solder Mask Clearance Constraint: (8.017mil < 10mil) Between Pad C6-1(1060mil,2469.772mil) on Top Layer And Track (1095.433mil,2504.312mil)(1095.433mil,2535.688mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.018mil]Waived by Ryan Reidhead at 10/6/2022 12:11:23 AM
+   Waived Violation between Silk To Solder Mask Clearance Constraint: (8.018mil < 10mil) Between Pad C6-2(1060mil,2570.228mil) on Top Layer And Track (1024.567mil,2504.312mil)(1024.567mil,2535.688mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.018mil]Waived by Ryan Reidhead at 10/6/2022 12:11:05 AM
+   Waived Violation between Silk To Solder Mask Clearance Constraint: (8.018mil < 10mil) Between Pad C6-2(1060mil,2570.228mil) on Top Layer And Track (1095.433mil,2504.312mil)(1095.433mil,2535.688mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.018mil]Waived by Ryan Reidhead at 10/6/2022 12:11:08 AM
+   Waived Violation between Silk To Solder Mask Clearance Constraint: (8.017mil < 10mil) Between Pad C7-1(1670mil,2504.772mil) on Top Layer And Track (1634.567mil,2539.312mil)(1634.567mil,2570.688mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.018mil]Waived by Ryan Reidhead at 10/6/2022 12:11:38 AM
+   Waived Violation between Silk To Solder Mask Clearance Constraint: (8.017mil < 10mil) Between Pad C7-1(1670mil,2504.772mil) on Top Layer And Track (1705.433mil,2539.312mil)(1705.433mil,2570.688mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.018mil]Waived by Ryan Reidhead at 10/6/2022 12:11:34 AM
+   Waived Violation between Silk To Solder Mask Clearance Constraint: (8.018mil < 10mil) Between Pad C7-2(1670mil,2605.228mil) on Top Layer And Track (1634.567mil,2539.312mil)(1634.567mil,2570.688mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.018mil]Waived by Ryan Reidhead at 10/6/2022 12:11:01 AM
+   Waived Violation between Silk To Solder Mask Clearance Constraint: (8.018mil < 10mil) Between Pad C7-2(1670mil,2605.228mil) on Top Layer And Track (1705.433mil,2539.312mil)(1705.433mil,2570.688mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.018mil]Waived by Ryan Reidhead at 10/6/2022 12:10:52 AM
+Waived Violations :12
+
+
+Violations Detected : 0
+Waived Violations : 30
+Time Elapsed        : 00:00:02

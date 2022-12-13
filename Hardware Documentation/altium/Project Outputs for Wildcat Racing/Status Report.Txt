@@ -1,0 +1,14 @@
+Project Outputs Generation Report
+---------------------------------
+Start Output Generation At 4:57:23 PM On 10/24/2022
+
+Output: Generates pick and place files
+Type  : Pick Place
+From  : Variant [[No Variations]] of PCB Document [12V Power.PcbDoc]
+   Generated File[Pick Place for 12V Power.txt]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 4:57:23 PM On 10/24/2022

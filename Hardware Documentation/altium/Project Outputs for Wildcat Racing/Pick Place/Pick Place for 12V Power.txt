@@ -1,0 +1,41 @@
+Altium Designer Pick and Place Locations
+C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\Project Outputs for Wildcat Racing\Pick Place\Pick Place for 12V Power.txt
+
+========================================================================================================================
+File Design Information:
+
+Date:       24/10/22
+Time:       16:57
+Revision:   Not in VersionControl
+Variant:    No variations
+Units used: mil
+
+Designator Comment              Layer    Footprint                    Center-X(mil) Center-Y(mil) Rotation Description                                                                                 
+U3         LMR33630CQRNXRQ1     TopLayer RNX0012B                     1340.315      2489.705      0        "No Description Available"                                                                  
+R5         CRCW04029K09FKED     TopLayer FP-CRCW0402-e3-IPC_A         1415.000      2195.000      180      "RES Thick Film, 9.09kO, 1%, 0.063W, 100ppm/°C, 0402"                                       
+R4         CRCW0402100KFKED     TopLayer FP-CRCW0402-e3-IPC_C         1950.000      2475.000      270      "RES Thick Film, 100kO, 1%, 0.063W, 100ppm/°C, 0402"                                        
+R3         CRCW0402100KFKED     TopLayer FP-CRCW0402-e3-IPC_C         1525.833      2345.000      180      "RES Thick Film, 100kO, 1%, 0.063W, 100ppm/°C, 0402"                                        
+R2         CRCW0402100KFKED     TopLayer FP-CRCW0402-e3-IPC_C         1655.000      2210.000      90       "RES Thick Film, 100kO, 1%, 0.063W, 100ppm/°C, 0402"                                        
+R1         CRCW04021M13FKED     TopLayer RESC1005X40X25ML05T05        1830.000      2480.315      90       ""                                                                                          
+J5         20020316-H021B01LF   TopLayer CONN_20020316-H021B01LF_AMP  400.000       2600.000      90       "No Description Available"                                                                  
+J4         20020316-H021B01LF   TopLayer CONN_20020316-H021B01LF_AMP  2600.000      2540.000      270      "No Description Available"                                                                  
+J2         20020316-H021B01LF   TopLayer CONN_20020316-H021B01LF_AMP  380.000       440.000       90       "No Description Available"                                                                  
+C13        GRM1555C1H1R0CA01D   TopLayer CAPC1005X55X25NL05T10        1545.000      2210.000      90       ""                                                                                          
+C9         GRM188R72A104KA35D   TopLayer FP-GRM188-0_1-e0_2_0_5-IPC_B 1505.000      2535.000      90       "Chip Multilayer Ceramic Capacitors for General Purpose, 0603, 0.10uF, X7R, 15%, 10%, 100V" 
+C8         GRM188R72A104KA35D   TopLayer FP-GRM188-0_1-e0_2_0_5-IPC_B 1160.000      2520.000      90       "Chip Multilayer Ceramic Capacitors for General Purpose, 0603, 0.10uF, X7R, 15%, 10%, 100V" 
+C7         GRM31CR71H475KA12L   TopLayer FP-GRM31C-0_2-e0_3_0_8-IPC_C 1670.000      2555.000      90       "Chip Multilayer Ceramic Capacitors for General Purpose, 1206, 4.7uF, X7R, 15%, 10%, 50V"   
+C6         GRM31CR71H475KA12L   TopLayer FP-GRM31C-0_2-e0_3_0_8-IPC_C 1060.000      2520.000      90       "Chip Multilayer Ceramic Capacitors for General Purpose, 1206, 4.7uF, X7R, 15%, 10%, 50V"   
+C5         GRM155R71C104KA88D   TopLayer FP-GRM15-MFG                 1175.000      2375.000      90       "CAP CER 0.1UF 16V X7R 0402"                                                                
+U2         LM2940CS-12/NOPB     TopLayer KTT0003B_N                   1239.213      860.000       0        "1A Low Dropout Regulator, 3-pin TO-263, Pb-Free"                                           
+U1         ADC104S021CIMMX/NOPB TopLayer MUB10A_N                     2160.000      835.000       270      "4 Channel, 50 kSPS to 200 kSPS, 10-Bit A/D Converter, 10-pin Mini SOIC, Pb-Free"           
+L1         78438357018          TopLayer FP-78438357018-MFG           1340.000      2700.000      90       "FIXED IND 1.8UH 5.8A 21MOHM SMD"                                                           
+J3         IPL1-104-02-L-D-K    TopLayer FP-IPL1-104-02-L-D-K-0       2665.000      870.000       180      "4 Position 2 Row .100" (2.54 mm) pitch connector"                                          
+J1         IPL1-104-02-L-D-K    TopLayer FP-IPL1-104-02-L-D-K-0       2310.000      345.000       90       "4 Position 2 Row .100" (2.54 mm) pitch connector"                                          
+C14        C1608X5R1H105K080AB  TopLayer FP-C1608-080-0_1-IPC_B       1254.783      2255.000      180      "Multilayer Ceramic Capacitors 1µF ±10% 50V X5R SMD 0603"                                   
+C12        CGA3E2X7R1H104K080AA TopLayer FP-CGA3E-0_3-0_1-IPC_A       1560.000      2760.000      270      "Cap Ceramic 100nF 50V X7R 10% Pad SMD 0603 +125°C Automotive T/R"                          
+C11        C0805C106K8PACTU     TopLayer FP-C0805C-DG-MFG             1160.000      2729.528      270      "CAP CER 10UF 10V X5R 0805"                                                                 
+C10        C0805C106K8PACTU     TopLayer FP-C0805C-DG-MFG             1035.287      2729.528      270      "CAP CER 10UF 10V X5R 0805"                                                                 
+C4         CL03A104KP3NNNC      TopLayer FP-CL03-IPC_C                2169.988      1265.000      0        "Cap Ceramic 100nF 10V X5R ±10% Pad SMD 0201 +85°C T/R"                                     
+C3         TPCL105M010R5000     TopLayer CAPC1609X100X15LL20          2150.000      1095.000      180      ""                                                                                          
+C2         CL10F474ZA8NNNC      TopLayer FP-CL10-IPC_C                865.000       895.000       270      "Cap Ceramic 470nF 25V Y5V -20/+80% Pad SMD 0603 +85°C T/R"                                 
+C1         20SVP150M            TopLayer FP-OS-CON-SMT-F12-MFG        1215.000      305.000       180      "Conductive Polymer Aluminum Solid Capacitors (OS-CON) 150uF ±20% 20V RADIAL SMT 10x12.6mm" 

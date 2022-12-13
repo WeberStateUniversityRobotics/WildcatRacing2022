@@ -1,0 +1,451 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\makot\Documents\Altium\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">10/6/2022</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">12:12:26 AM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:02</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc" class="file"><acronym title="C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc">C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Waived Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">30</td></tr>
+</table>
+</td>
+</table><a name="IDBCWCQUZ2FYFCFZ2ZA4Q22352LOUH435ZZWHARXBVQAADY5KLNRMB"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDZE0PRZHIIIIBLBOJQ2OISQK5PGTQGKCH2MNLANDIETTIAHOONM4">Clearance Constraint (Gap=8mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDUCCG4AKYEIHXNF02BHTK3NRMQJU4MHGS3Y3BZ3CXBDXDYZJCIHHK">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDHBMD3DERPW3XIRFYGUE123YDMKEZKC1D2WEDUNMCJRKYESTLWKIJ">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDXVTDQU14YXW0HSAW2IPY3L0PCCION3GRMOAO0PNSEH1SMSFETJQM">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDWTSDI50JCACITIRD135FIWSWGG2GZL4XDZ4PIOFE0H01ZEEUSRF">Width Constraint (Min=10mil) (Max=10mil) (Preferred=10mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDKOT3OOHWIPFJDF2PBZSTR3RRQODVIQK044CGCPDHIPA13NQDTW2N">Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDI1H2MSTAAZ2NHG1E02HPJAHUE2IA1YCMSDYB5N3IWZSC0LMDFG">Hole Size Constraint (Min=1mil) (Max=100mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDR4XWLTCMXUNOCP10PC3VWYYC0G5DHXDM5NCN2NGIF20GJQ33QJTJ">Hole To Hole Clearance (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID0EVBNBSXEFTRPPJ4CO0D1EIWSFI1NUWMB3TYAVRTKIFEFKEEYTC">Minimum Solder Mask Sliver (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDCOAIWMX0GCZBGSX12JKW1YQ4MGOUI3HZ12HJOABFX5NTDRUH2ZWC">Silk To Solder Mask (Clearance=10mil) (IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDARAMQCYCUV1DFURNTKEX5SYM5D5WBWQ1IQY1QOEYSWN1J3RQSCIK">Silk to Silk (Clearance=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDL5URQ3BGSOXTGNE3R1HVGTL40EO31ZTIDIPLUSCVSDJ3P5V4TNBH">Net Antennae (Tolerance=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDMJURIIB3X0D2M0LPB2RILPVCDM1JYYBZMM4TQ0NGIEY55WS43CBM">Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Waived Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDAKR12XDAFANDDDDFAEK3NLLEFMKUMNSWPRVXOJIGRA2B05XYX3OP">Clearance Constraint (Gap=8mil) (All),(All)</a></td>
+<td class="column2">10</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDEUQJAQDNMXGELB4DCRM0VATI5LA1IV1JKC1VQQKDVGALVZ3QYUZJ">Minimum Solder Mask Sliver (Gap=10mil) (All),(All)</a></td>
+<td class="column2">8</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDER4WP1PIR03VOSABEMEPZSPLBBHFELPSFJBWSGG4MHGVDC0JVPHF">Silk To Solder Mask (Clearance=10mil) (IsPad),(All)</a></td>
+<td class="column2">12</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">30</td>
+</tr>
+</table><br><a name="IDCV0WW32YJLXTC5UNDGQ5CGQT4ITZTHPLLEK2H5KUUZTOXCM4GM2G"><h2>Rule Violations</h2></a><a name="ID0X0YLPJANRBMCPR3KJNQV0R1FGTLKSZCAHZ4UKMZFEYK3AEE0A1E"><h2>Waived Violations</h2></a><a name="IDAKR12XDAFANDDDDFAEK3NLLEFMKUMNSWPRVXOJIGRA2B05XYX3OP"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="waived">Clearance Constraint (Gap=8mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2250.157mil|Location2.X=2259.407mil|Location1.Y=3232.42mil|Location2.Y=3241.67mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2250.157mil|Location2.X=2259.407mil|Location1.Y=3232.42mil|Location2.Y=3241.67mil|Absolute=True">Clearance Constraint: (5.904mil &lt; 8mil) Between Pad C14-1(1280mil,2255mil) on Top Layer And Pad C14-2(1229.565mil,2255mil) on Top Layer </acronym></a><br>Waived by Ryan Reidhead at 10/6/2022 12:12:11 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3165.363mil|Location2.X=3174.613mil|Location1.Y=2265.547mil|Location2.Y=2274.797mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3165.363mil|Location2.X=3174.613mil|Location1.Y=2265.547mil|Location2.Y=2274.797mil|Absolute=True">Clearance Constraint: (6.083mil &lt; 8mil) Between Pad C4-1(2159.976mil,1265mil) on Top Layer And Pad C4-2(2180mil,1265mil) on Top Layer </acronym></a><br>Waived by Ryan Reidhead at 10/6/2022 12:12:11 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3184.903mil|Location2.X=3194.153mil|Location1.Y=1883.524mil|Location2.Y=1892.774mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3184.903mil|Location2.X=3194.153mil|Location1.Y=1883.524mil|Location2.Y=1892.774mil|Absolute=True">Clearance Constraint: (7.874mil &lt; 8mil) Between Pad U1-1(2199.37mil,915.709mil) on Top Layer And Pad U1-2(2179.685mil,915.709mil) on Top Layer </acronym></a><br>Waived by Ryan Reidhead at 10/6/2022 12:12:11 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3184.903mil|Location2.X=3194.153mil|Location1.Y=1722.107mil|Location2.Y=1731.357mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3184.903mil|Location2.X=3194.153mil|Location1.Y=1722.107mil|Location2.Y=1731.357mil|Absolute=True">Clearance Constraint: (7.874mil &lt; 8mil) Between Pad U1-10(2199.37mil,754.291mil) on Top Layer And Pad U1-9(2179.685mil,754.291mil) on Top Layer </acronym></a><br>Waived by Ryan Reidhead at 10/6/2022 12:12:11 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3165.218mil|Location2.X=3174.468mil|Location1.Y=1883.524mil|Location2.Y=1892.774mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3165.218mil|Location2.X=3174.468mil|Location1.Y=1883.524mil|Location2.Y=1892.774mil|Absolute=True">Clearance Constraint: (7.874mil &lt; 8mil) Between Pad U1-2(2179.685mil,915.709mil) on Top Layer And Pad U1-3(2160mil,915.709mil) on Top Layer </acronym></a><br>Waived by Ryan Reidhead at 10/6/2022 12:12:11 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3145.532mil|Location2.X=3154.782mil|Location1.Y=1883.524mil|Location2.Y=1892.774mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3145.532mil|Location2.X=3154.782mil|Location1.Y=1883.524mil|Location2.Y=1892.774mil|Absolute=True">Clearance Constraint: (7.874mil &lt; 8mil) Between Pad U1-3(2160mil,915.709mil) on Top Layer And Pad U1-4(2140.315mil,915.709mil) on Top Layer </acronym></a><br>Waived by Ryan Reidhead at 10/6/2022 12:12:11 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3125.847mil|Location2.X=3135.097mil|Location1.Y=1883.524mil|Location2.Y=1892.774mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3125.847mil|Location2.X=3135.097mil|Location1.Y=1883.524mil|Location2.Y=1892.774mil|Absolute=True">Clearance Constraint: (7.874mil &lt; 8mil) Between Pad U1-4(2140.315mil,915.709mil) on Top Layer And Pad U1-5(2120.63mil,915.709mil) on Top Layer </acronym></a><br>Waived by Ryan Reidhead at 10/6/2022 12:12:11 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3125.847mil|Location2.X=3135.097mil|Location1.Y=1722.107mil|Location2.Y=1731.357mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3125.847mil|Location2.X=3135.097mil|Location1.Y=1722.107mil|Location2.Y=1731.357mil|Absolute=True">Clearance Constraint: (7.874mil &lt; 8mil) Between Pad U1-6(2120.63mil,754.291mil) on Top Layer And Pad U1-7(2140.315mil,754.291mil) on Top Layer </acronym></a><br>Waived by Ryan Reidhead at 10/6/2022 12:12:11 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3145.532mil|Location2.X=3154.782mil|Location1.Y=1722.107mil|Location2.Y=1731.357mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3145.532mil|Location2.X=3154.782mil|Location1.Y=1722.107mil|Location2.Y=1731.357mil|Absolute=True">Clearance Constraint: (7.874mil &lt; 8mil) Between Pad U1-7(2140.315mil,754.291mil) on Top Layer And Pad U1-8(2160mil,754.291mil) on Top Layer </acronym></a><br>Waived by Ryan Reidhead at 10/6/2022 12:12:11 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3165.218mil|Location2.X=3174.468mil|Location1.Y=1722.107mil|Location2.Y=1731.357mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3165.218mil|Location2.X=3174.468mil|Location1.Y=1722.107mil|Location2.Y=1731.357mil|Absolute=True">Clearance Constraint: (7.874mil &lt; 8mil) Between Pad U1-8(2160mil,754.291mil) on Top Layer And Pad U1-9(2179.685mil,754.291mil) on Top Layer </acronym></a><br>Waived by Ryan Reidhead at 10/6/2022 12:12:11 AM</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDEUQJAQDNMXGELB4DCRM0VATI5LA1IV1JKC1VQQKDVGALVZ3QYUZJ"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="waived">Minimum Solder Mask Sliver (Gap=10mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2555.58mil|Location2.X=2566.83mil|Location1.Y=3204.375mil|Location2.Y=3215.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2555.58mil|Location2.X=2566.83mil|Location1.Y=3204.375mil|Location2.Y=3215.625mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.662mil &lt; 10mil) Between Pad C13-1(1545mil,2192.677mil) on Top Layer And Pad C13-2(1545mil,2227.323mil) on Top Layer [Top Solder] Mask Sliver [0.662mil]</acronym></a><br>Waived by Ryan Reidhead at 10/6/2022 12:11:53 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2249.157mil|Location2.X=2260.407mil|Location1.Y=3231.42mil|Location2.Y=3242.67mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2249.157mil|Location2.X=2260.407mil|Location1.Y=3231.42mil|Location2.Y=3242.67mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (5.904mil &lt; 10mil) Between Pad C14-1(1280mil,2255mil) on Top Layer And Pad C14-2(1229.565mil,2255mil) on Top Layer [Top Solder] Mask Sliver [5.904mil]</acronym></a><br>Waived by Ryan Reidhead at 10/6/2022 12:11:53 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3164.363mil|Location2.X=3175.613mil|Location1.Y=2264.547mil|Location2.Y=2275.797mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3164.363mil|Location2.X=3175.613mil|Location1.Y=2264.547mil|Location2.Y=2275.797mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (6.083mil &lt; 10mil) Between Pad C4-1(2159.976mil,1265mil) on Top Layer And Pad C4-2(2180mil,1265mil) on Top Layer [Top Solder] Mask Sliver [6.083mil]</acronym></a><br>Waived by Ryan Reidhead at 10/6/2022 12:11:47 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2841.17mil|Location2.X=2852.42mil|Location1.Y=3474.69mil|Location2.Y=3485.94mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2841.17mil|Location2.X=2852.42mil|Location1.Y=3474.69mil|Location2.Y=3485.94mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (5.779mil &lt; 10mil) Between Pad R1-1(1830mil,2460.63mil) on Top Layer And Pad R1-2(1830mil,2500mil) on Top Layer [Top Solder] Mask Sliver [5.779mil]</acronym></a><br>Waived by Ryan Reidhead at 10/6/2022 12:11:53 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2311.068mil|Location2.X=2322.318mil|Location1.Y=3472.761mil|Location2.Y=3484.011mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2311.068mil|Location2.X=2322.318mil|Location1.Y=3472.761mil|Location2.Y=3484.011mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (9.843mil &lt; 10mil) Between Pad U3-3(1304.882mil,2488.228mil) on Top Layer And Pad U3-4(1304.882mil,2468.543mil) on Top Layer [Top Solder] Mask Sliver [9.843mil]</acronym></a><br>Waived by Ryan Reidhead at 10/6/2022 12:11:53 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2324.847mil|Location2.X=2336.097mil|Location1.Y=3422.564mil|Location2.Y=3433.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2324.847mil|Location2.X=2336.097mil|Location1.Y=3422.564mil|Location2.Y=3433.814mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (9.843mil &lt; 10mil) Between Pad U3-5(1320.63mil,2440mil) on Top Layer And Pad U3-6(1340.315mil,2440mil) on Top Layer [Top Solder] Mask Sliver [9.843mil]</acronym></a><br>Waived by Ryan Reidhead at 10/6/2022 12:11:43 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2344.532mil|Location2.X=2355.782mil|Location1.Y=3422.564mil|Location2.Y=3433.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2344.532mil|Location2.X=2355.782mil|Location1.Y=3422.564mil|Location2.Y=3433.814mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (9.843mil &lt; 10mil) Between Pad U3-6(1340.315mil,2440mil) on Top Layer And Pad U3-7(1360mil,2440mil) on Top Layer [Top Solder] Mask Sliver [9.843mil]</acronym></a><br>Waived by Ryan Reidhead at 10/6/2022 12:11:53 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2381.934mil|Location2.X=2393.184mil|Location1.Y=3472.761mil|Location2.Y=3484.011mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2381.934mil|Location2.X=2393.184mil|Location1.Y=3472.761mil|Location2.Y=3484.011mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (9.843mil &lt; 10mil) Between Pad U3-8(1375.748mil,2468.543mil) on Top Layer And Pad U3-9(1375.748mil,2488.228mil) on Top Layer [Top Solder] Mask Sliver [9.843mil]</acronym></a><br>Waived by Ryan Reidhead at 10/6/2022 12:11:53 AM</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDER4WP1PIR03VOSABEMEPZSPLBBHFELPSFJBWSGG4MHGVDC0JVPHF"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="waived">Silk To Solder Mask (Clearance=10mil) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2530.631mil|Location2.X=2541.881mil|Location1.Y=3771.969mil|Location2.Y=3783.219mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2530.631mil|Location2.X=2541.881mil|Location1.Y=3771.969mil|Location2.Y=3783.219mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.874mil &lt; 10mil) Between Pad C12-1(1560mil,2800.354mil) on Top Layer And Track (1536.256mil,2750.28mil)(1536.256mil,2769.72mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.874mil]</acronym></a><br>Waived by Ryan Reidhead at 10/6/2022 12:11:16 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2578.119mil|Location2.X=2589.369mil|Location1.Y=3771.969mil|Location2.Y=3783.219mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2578.119mil|Location2.X=2589.369mil|Location1.Y=3771.969mil|Location2.Y=3783.219mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.874mil &lt; 10mil) Between Pad C12-1(1560mil,2800.354mil) on Top Layer And Track (1583.744mil,2750.28mil)(1583.744mil,2769.72mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.874mil]</acronym></a><br>Waived by Ryan Reidhead at 10/6/2022 12:11:13 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2530.631mil|Location2.X=2541.881mil|Location1.Y=3736.78mil|Location2.Y=3748.03mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2530.631mil|Location2.X=2541.881mil|Location1.Y=3736.78mil|Location2.Y=3748.03mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.874mil &lt; 10mil) Between Pad C12-2(1560mil,2719.646mil) on Top Layer And Track (1536.256mil,2750.28mil)(1536.256mil,2769.72mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.874mil]</acronym></a><br>Waived by Ryan Reidhead at 10/6/2022 12:11:31 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2578.119mil|Location2.X=2589.369mil|Location1.Y=3736.78mil|Location2.Y=3748.03mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2578.119mil|Location2.X=2589.369mil|Location1.Y=3736.78mil|Location2.Y=3748.03mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.874mil &lt; 10mil) Between Pad C12-2(1560mil,2719.646mil) on Top Layer And Track (1583.744mil,2750.28mil)(1583.744mil,2769.72mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.874mil]</acronym></a><br>Waived by Ryan Reidhead at 10/6/2022 12:11:27 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2020.169mil|Location2.X=2031.419mil|Location1.Y=3490.837mil|Location2.Y=3502.087mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2020.169mil|Location2.X=2031.419mil|Location1.Y=3490.837mil|Location2.Y=3502.087mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.017mil &lt; 10mil) Between Pad C6-1(1060mil,2469.772mil) on Top Layer And Track (1024.567mil,2504.312mil)(1024.567mil,2535.688mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.018mil]</acronym></a><br>Waived by Ryan Reidhead at 10/6/2022 12:11:20 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2088.581mil|Location2.X=2099.831mil|Location1.Y=3490.837mil|Location2.Y=3502.087mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2088.581mil|Location2.X=2099.831mil|Location1.Y=3490.837mil|Location2.Y=3502.087mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.017mil &lt; 10mil) Between Pad C6-1(1060mil,2469.772mil) on Top Layer And Track (1095.433mil,2504.312mil)(1095.433mil,2535.688mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.018mil]</acronym></a><br>Waived by Ryan Reidhead at 10/6/2022 12:11:23 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2020.169mil|Location2.X=2031.419mil|Location1.Y=3537.913mil|Location2.Y=3549.163mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2020.169mil|Location2.X=2031.419mil|Location1.Y=3537.913mil|Location2.Y=3549.163mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.018mil &lt; 10mil) Between Pad C6-2(1060mil,2570.228mil) on Top Layer And Track (1024.567mil,2504.312mil)(1024.567mil,2535.688mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.018mil]</acronym></a><br>Waived by Ryan Reidhead at 10/6/2022 12:11:05 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2088.581mil|Location2.X=2099.831mil|Location1.Y=3537.913mil|Location2.Y=3549.163mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2088.581mil|Location2.X=2099.831mil|Location1.Y=3537.913mil|Location2.Y=3549.163mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.018mil &lt; 10mil) Between Pad C6-2(1060mil,2570.228mil) on Top Layer And Track (1095.433mil,2504.312mil)(1095.433mil,2535.688mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.018mil]</acronym></a><br>Waived by Ryan Reidhead at 10/6/2022 12:11:08 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2630.169mil|Location2.X=2641.419mil|Location1.Y=3525.837mil|Location2.Y=3537.087mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2630.169mil|Location2.X=2641.419mil|Location1.Y=3525.837mil|Location2.Y=3537.087mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.017mil &lt; 10mil) Between Pad C7-1(1670mil,2504.772mil) on Top Layer And Track (1634.567mil,2539.312mil)(1634.567mil,2570.688mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.018mil]</acronym></a><br>Waived by Ryan Reidhead at 10/6/2022 12:11:38 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2698.581mil|Location2.X=2709.831mil|Location1.Y=3525.837mil|Location2.Y=3537.087mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2698.581mil|Location2.X=2709.831mil|Location1.Y=3525.837mil|Location2.Y=3537.087mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.017mil &lt; 10mil) Between Pad C7-1(1670mil,2504.772mil) on Top Layer And Track (1705.433mil,2539.312mil)(1705.433mil,2570.688mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.018mil]</acronym></a><br>Waived by Ryan Reidhead at 10/6/2022 12:11:34 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2630.169mil|Location2.X=2641.419mil|Location1.Y=3572.913mil|Location2.Y=3584.163mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2630.169mil|Location2.X=2641.419mil|Location1.Y=3572.913mil|Location2.Y=3584.163mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.018mil &lt; 10mil) Between Pad C7-2(1670mil,2605.228mil) on Top Layer And Track (1634.567mil,2539.312mil)(1634.567mil,2570.688mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.018mil]</acronym></a><br>Waived by Ryan Reidhead at 10/6/2022 12:11:01 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2698.581mil|Location2.X=2709.831mil|Location1.Y=3572.913mil|Location2.Y=3584.163mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\Projects\Wildcat Racing\12V Power.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2698.581mil|Location2.X=2709.831mil|Location1.Y=3572.913mil|Location2.Y=3584.163mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.018mil &lt; 10mil) Between Pad C7-2(1670mil,2605.228mil) on Top Layer And Track (1705.433mil,2539.312mil)(1705.433mil,2570.688mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.018mil]</acronym></a><br>Waived by Ryan Reidhead at 10/6/2022 12:10:52 AM</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
